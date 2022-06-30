@@ -6,9 +6,13 @@ CREATE QUERY average_selling_price(BOOL print_accum = FALSE, STRING result_attr 
         ACCUM u.@average_selling_price += tgt.usd_price;
   
   res = SELECT s FROM res:s
-    POST-ACCUM 
+    POST-ACCUM
         IF result_attr != "" THEN 
-            s.setAttr(result_attr, s.@average_selling_price) 
+            IF s.@average_selling_price == 0 THEN
+              s.setAttr(result_attr, -1)
+            ELSE
+              s.setAttr(result_attr, s.@average_selling_price) 
+            END
         END;
   IF print_accum THEN
     PRINT res;

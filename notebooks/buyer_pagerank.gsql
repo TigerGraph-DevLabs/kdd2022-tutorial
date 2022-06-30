@@ -1,0 +1,17 @@
+
+CREATE QUERY buyer_pagerank(BOOL print_accum = FALSE, STRING result_attr = "") {
+    transactions = {Transaction.*};
+    SumAccum<DOUBLE> @buyer_pr;
+
+
+    res = SELECT t FROM transactions:t -(NFT_BOUGHT_BY)-> NFT_User:u 
+          ACCUM
+            t.@buyer_pr += u.pagerank
+          POST-ACCUM
+            IF result_attr != "" THEN
+                t.setAttr(result_attr, t.@buyer_pr)
+            END;
+    IF print_accum THEN
+      PRINT res[res.@buyer_pr];
+    END;
+}

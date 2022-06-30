@@ -3,13 +3,13 @@ USE GRAPH KDD_2022_NFT
 CREATE LOADING JOB load_nft_data FOR GRAPH KDD_2022_NFT {
     DEFINE FILENAME file1;
 
-    LOAD file1 TO VERTEX NFT VALUES ($13, $8, _, _) USING header="true", separator=";"; # Edit with image links and names
-    LOAD file1 TO VERTEX Transaction VALUES ($0, $2, $7, _, _) USING header="true", separator=";";
-    LOAD file1 TO VERTEX Market VALUES ($11, _, _) USING header="true", separator=";";
-    LOAD file1 TO VERTEX NFT_User VALUES ($3, $4, _, _) USING header="true", separator=";";
-    LOAD file1 TO VERTEX NFT_User VALUES ($5, $6, _, _) USING header="true", separator=";";
-    LOAD file1 TO VERTEX Category VALUES ($10, _, _) USING header="true", separator=";";
-    LOAD file1 TO VERTEX NFT_Collection VALUES ($9, _, _) USING header="true", separator=";";
+    LOAD file1 TO VERTEX NFT VALUES ($13, $8, _, SPLIT($15," "), SPLIT($14," ")) USING header="true", separator=";"; # Edit with image links and names
+    LOAD file1 TO VERTEX Transaction VALUES ($0, $2, $7, _, SPLIT($15," "), SPLIT($14," "), _, _) USING header="true", separator=";";
+    LOAD file1 TO VERTEX Market VALUES ($11, _) USING header="true", separator=";";
+    LOAD file1 TO VERTEX NFT_User VALUES ($3, $4, _) USING header="true", separator=";";
+    LOAD file1 TO VERTEX NFT_User VALUES ($5, $6, _) USING header="true", separator=";";
+    LOAD file1 TO VERTEX Category VALUES ($10, _, SPLIT($14," ")) USING header="true", separator=";";
+    LOAD file1 TO VERTEX NFT_Collection VALUES ($9, _, SPLIT($15," ")) USING header="true", separator=";";
 
     LOAD file1 TO EDGE USER_BOUGHT_NFT VALUES ($5, $0) USING header="true", separator=";";
     LOAD file1 TO EDGE USER_SOLD_NFT VALUES ($3, $0)  USING header="true", separator=";";
