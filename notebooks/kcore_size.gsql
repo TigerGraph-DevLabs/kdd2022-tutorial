@@ -1,16 +1,22 @@
 
 CREATE QUERY kcore_size(BOOL print_accum = FALSE, STRING result_attr = "") FOR GRAPH KDD_2022_NFT { 
-  MapAccum<INT, SumAccum<INT>> @@kcore_size;
+  MapAccum<INT, SumAccum<FLOAT>> @@kcore_size;
+  MaxAccum<FLOAT> @@max_kcore_size;
+
   
-  trans = {Transaction.*};
+  nftuser = {NFT_User.*};
   
-  res = SELECT t FROM trans:t POST-ACCUM @@kcore_size += (t.k_core -> 1);
+  res = SELECT t FROM nftuser:t POST-ACCUM @@kcore_size += (t.k_core -> 1);
   
   IF print_accum THEN
     PRINT @@kcore_size;
   END;
+
+  FOREACH (key, value) IN @@kcore_size DO
+    @@max_kcore_size += value;
+  END;
   
   IF result_attr != "" THEN
-    res = SELECT t FROM trans:t POST-ACCUM t.setAttr(result_attr, @@kcore_size.get(t.k_core));
+    res = SELECT t FROM nftuser:t POST-ACCUM t.setAttr(result_attr, @@kcore_size.get(t.k_core)/@@max_kcore_size);
   END;
 }

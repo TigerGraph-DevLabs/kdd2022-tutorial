@@ -2,14 +2,16 @@
 CREATE QUERY seller_pagerank(BOOL print_accum = FALSE, STRING result_attr = "") {
     transactions = {Transaction.*};
     SumAccum<DOUBLE> @seller_pr;
+    MaxAccum<DOUBLE> @@max_seller_pr;
 
 
     res = SELECT t FROM transactions:t -(NFT_SOLD_BY)-> NFT_User:u 
           ACCUM
-            t.@seller_pr += u.pagerank
+            t.@seller_pr += u.pagerank,
+            @@max_seller_pr += u.pagerank
           POST-ACCUM
             IF result_attr != "" THEN
-                t.setAttr(result_attr, t.@seller_pr)
+                t.setAttr(result_attr, t.@seller_pr/@@max_seller_pr)
             END;
     IF print_accum THEN
       PRINT res[res.@seller_pr];
