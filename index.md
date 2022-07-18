@@ -3,7 +3,8 @@ Machine learning on graph data has become a common area of interest across acade
 
 ## Tutorial Outline
 
-### Notebook 0 - Intro to TigerGraph Cloud and Loading Data
+### [Notebook 0 - Intro to TigerGraph Cloud and Loading Data](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/load_data.ipynb)
+In this section, we will cover what TigerGraph is and its massively parallel processing architecture. The unique architecture allows TigerGraph to run highly-performant, distributed, and scalable graph data science algorithms. We will then load a dataset of transactions to TigerGraph Cloud and familiarize ourselves with the TigerGraph ML Workbench Cloud.
 
 ### [Notebook 1 - Graph Data Exploration](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/graph_algorithms.ipynb)
 Algorithms such as Louvain community detection [1] have been very good at helping discover fraudulent transactions within finan- cial interaction graphs. Maximal independent set has been used for non-conflicting routing problems. Cosine similarity of graph neigh- borhoods have been used in recommendation and classification tasks. In this section, we will cover some large classes of graph data science algorithms, such as community detection, centrality, and similarity that can be executed efficiently within the TigerGraph database. Using these algorithms, we will begin to analyze and perform exploratory data analysis on the NFT transaction dataset.
