@@ -15,7 +15,7 @@ Combining traditional features as well as ones derived from the graph can be a p
 ### [Notebook 3 - Graph Neural Networks](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/gnn_training.ipynb)
 Graph Neural Network models have been exploding in popularity in recent years, yet there have not been great ways to store and query the data into subgraphs for training models such as GraphSAGE [5]. TigerGraph simplifies this process through our Machine Learning Workbench. Researchers and data scientists can now test new architectures on arbitrarily large datasets, using tools that they are already familiar with such as PyTorch Geometric and DGL. In this section, we will train and evaluate a Graph Neural Network with the NFT data stored in TigerGraph, incorporating both the visual feature data that describes the NFTs as well as the network information into our predictions.
 
-## Speakers
+## Authors
 
 ### Victor Lee, Ph.D.
 **VP of Machine Learning and AI, TigerGraph**
@@ -26,9 +26,6 @@ Victor wrote his Ph.D. dissertation on graph-based similarity and ranking. Dr. L
 **Machine Learning Engineer, TigerGraph**
 
 Parker received his M.S. of Computer Science from the University of Minnesota with a focus on machine learning in 2022. He is also the founding developer of pyTigerGraph, a Python package for interact- ing with TigerGraph databases. Formerly an intern at UnitedHealth Group, Parker worked on graph machine learning solutions for fraud detection, member similarity, training course recommenda- tion, pharmacy formulary rules, and call center analytics.
-
-
-## Non-Presenting Authors
 
 ### Feng Shi, Ph.D.
 **Sr ML Architect and Manager, TigerGraph**
