@@ -47,7 +47,7 @@ He was an associate professor from 2021 to 2022 and an assistant professor from 
 
 [4] Matthias Fey and Jan Eric Lenssen. 2019. Fast Graph Representation Learning with PyTorch Geometric. CoRR abs/1903.02428 (2019). arXiv:1903.02428 http://arxiv.org/abs/1903.02428
 
-[5] WilliamL.Hamilton,RexYing,andJureLeskovec.2017.InductiveRepresentation Learning on Large Graphs. CoRR abs/1706.02216 (2017). arXiv:1706.02216 http://arxiv.org/abs/1706.02216
+[5] William L. Hamilton, Rex Ying, and Jure Leskovec. 2017. Inductive Representation Learning on Large Graphs. CoRR abs/1706.02216 (2017). arXiv:1706.02216 http://arxiv.org/abs/1706.02216
 
 [6] Matthieu Nadini, Laura Alessandretti, Flavio Di Giacinto, Mauro Martino, Luca Maria Aiello, and Andrea Baronchelli. 2021. Mapping the NFT revolution: market trends, trade networks, and visual features. Scientific Reports 11, 1 (Oct 2021). https://doi.org/10.1038/s41598-021-00053-8
 
