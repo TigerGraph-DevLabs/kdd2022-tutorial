@@ -38,7 +38,7 @@ Bill received his PhD in Applied Math with a research focus on complex networks.
 He was an associate professor from 2021 to 2022 and an assistant professor from 2016 to 2021 in the same department His research interests include data mining, machine learning and their applications in social media and education. He was the recipient of 2022 SDM IBM Early Career Data Mining Research Award, 2021 ICDM Tao Li Award, 2020 SIGKDD Rising Star Award, 2019 NSF Career Award, and 8 best paper awards (or runner-ups) including WSDM2018 and KDD2016. His dissertation won the 2015 KDD Best Dissertation runner up and Dean’s Dissertation Award. He serves as top data science conference organizers (e.g., KDD, SIGIR, WSDM, and SDM) and journal editors (e.g., TKDD and TKDE). He has published his research in highly ranked journals and top conference proceedings, which received more than 21,000 citations with h-index 69 and extensive media coverage
 
 ## References
-[1] Vincent D Blondel,Jean-Loup Guillaume,Renaud Lambiotte,and Etienne Lefebvre. 2008. Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment 2008, 10 (Oct 2008), P10008. https://doi.org/10.1088/1742-5468/2008/10/p10008
+[1] Vincent D Blondel, Jean-Loup Guillaume, Renaud Lambiotte, and Etienne Lefebvre. 2008. Fast unfolding of communities in large networks. Journal of Statistical Mechanics: Theory and Experiment 2008, 10 (Oct 2008), P10008. https://doi.org/10.1088/1742-5468/2008/10/p10008
 
 [2] Tianqi Chen and Carlos Guestrin.2016.XGBoost:AScalableTreeBoostingSystem. CoRR abs/1603.02754 (2016). arXiv:1603.02754 http://arxiv.org/abs/1603.02754
 
