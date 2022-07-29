@@ -1,0 +1,20 @@
+
+CREATE QUERY average_selling_price(BOOL print_accum = FALSE, STRING result_attr =  "") { 
+  AvgAccum @average_selling_price;
+  users = {NFT_User.*};
+  res = SELECT u FROM users:u -(USER_SOLD_NFT)-> Transaction:tgt
+        ACCUM u.@average_selling_price += tgt.usd_price;
+  
+  res = SELECT s FROM res:s
+    POST-ACCUM
+        IF result_attr != "" THEN 
+            IF s.@average_selling_price == 0 THEN
+              s.setAttr(result_attr, -1)
+            ELSE
+              s.setAttr(result_attr, s.@average_selling_price) 
+            END
+        END;
+  IF print_accum THEN
+    PRINT res;
+  END;
+}
