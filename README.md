@@ -1,19 +1,88 @@
 ## Abstract
 Machine learning on graph data has become a common area of interest across academia and industry. However, due to the size of real-world industry graphs (hundreds of millions of vertices and billions of edges) and the special architecture of graph neural networks, it is still a challenge for practitioners and researchers to perform machine learning tasks on large-scale graph data. It typically takes a powerful and expensive GPU machine to train a graph neural network on a million-vertex scale graph, let alone doing deep learning on real enterprise graphs. In this tutorial, we will cover how to develop and run performant graph algorithms and graph neural network models with TigerGraph [3], a massively parallel platform for graph analytics, and its Machine Learning Workbench with PyTorch Geometric [4] and DGL [8] support. Using an NFT transaction dataset [6], we will first investigate transactions using graph algorithms by themselves as methods of graph traversing, clustering, classification, and determining similarities between data. Secondly, we will show how to use those graph-derived features such as PageRank and embeddings to empower traditional machine learning models. Finally, we will demonstrate how to train common graph neural networks with TigerGraph and how to implement novel graph neural network models. Participants will use the TigerGraph ML Workbench Cloud to perform graph feature engineering and train their machine learning algorithms during the session.
 
-## Tutorial Outline
+## Getting Started
 
-### [Notebook 0 - Intro to TigerGraph Cloud and Loading Data](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/load_data.ipynb)
+Fill out the [Google Form](https://forms.gle/ncvLTykeFqJWZEU49) to get an invite to a TigerGraph Cloud account. You will be able to provision a database instance and ML Workbench once you follow the invite emailed to you and create an account.
+
+### Provisioning a Database Instance
+
+#### 1. Provision a TigerGraph Cloud Instance
+
+First, we will have to provision a TigerGraph Cloud instance. Please follow the directions given at the tutorial to provision your instance. Once that is complete, you should see something like this:
+
+
+<img src="./img/mySolutionsPage.png" alt="drawing" width="800"/>
+
+#### 2. Connect to GraphStudio
+
+Once your solution is provisioned, we want to connect to the GraphStudio UI. To do this, click on the **Applications** icon and select GraphStudio.
+
+<img src="./img/mySolutionsGS.png" alt="drawing" width="800"/>
+
+
+#### 3. Create Graph
+
+This will take you to the GraphStudio landing page, where we can create our graph. Click on the **Global View** button and select **Create a graph**:
+
+<img src="./img/createGraphGS.png" alt="drawing" width="800"/>
+
+Clicking this will bring up the following pop-up. Fill in the graph name as `KDD_2022_NFT`, and then select **Create**:
+
+<img src="./img/createGraph.png" alt="drawing" width="800"/>
+
+After this, you should see the following:
+
+<img src="./img/designSchema.png" alt="drawing" width="800"/>
+
+#### 4. Create Secret for Graph
+
+Once your graph is created, we can create a secret we will use for authentication with the database. From the previous screen, click on **Admin Portal** in the upper right corner. It will bring you to this screen:
+
+<img src="./img/apUsers.png" alt="drawing" width="800"/>
+
+Under the **Management** tab on the left hand menu bar, select **Users**. Here, you can create a secret. Define an alias and then click the **+** button:
+<img src="./img/createSecret.png" alt="drawing" width="800"/>
+
+Make sure to copy the secret that is generated, as you will never see it again.
+<img src="./img/copySecret.png" alt="drawing" width="800"/>
+
+Finally, we can paste the secret into the notebook cell below:
+<img src="./img/pasteSecret.png" alt="drawing" width="800"/>
+
+### Using ML Workbench
+We will use the ML Workbench to perform data analysis and machine learning on the graph data. To do this, we will provision a notebook server with **4 CPU cores and 16 GB of RAM**.
+
+## Hands-On Notebooks
+### [Notebook 0 - Intro to TigerGraph Cloud and Loading Data](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/0-load_data.ipynb)
 In this section, we will cover what TigerGraph is and its massively parallel processing architecture. The unique architecture allows TigerGraph to run highly-performant, distributed, and scalable graph data science algorithms. We will then load a dataset of transactions to TigerGraph Cloud and familiarize ourselves with the TigerGraph ML Workbench Cloud.
 
-### [Notebook 1 - Graph Data Exploration](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/graph_algorithms.ipynb)
+### [Notebook 1 - Graph Data Exploration](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/1-graph_algorithms.ipynb)
 Algorithms such as Louvain community detection [1] have been very good at helping discover fraudulent transactions within financial interaction graphs. Maximal independent set has been used for non-conflicting routing problems. Cosine similarity of graph neighborhoods have been used in recommendation and classification tasks. In this section, we will cover some large classes of graph data science algorithms, such as community detection, centrality, and similarity that can be executed efficiently within the TigerGraph database. Using these algorithms, we will begin to analyze and perform exploratory data analysis on the NFT transaction dataset.
 
-### [Notebook 2 - Graph + Machine Learning](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/graph_traditional_ml.ipynb)
+### [Notebook 2 - Graph + Machine Learning](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/2-graph_traditional_ml.ipynb)
 Combining traditional features as well as ones derived from the graph can be a powerful technique for improving the accuracy of machine learning algorithms without moving to graph neural networks. In this section, we will cover how to utilize the TigerGraph Graph Data Science Library and pyTigerGraph to enrich existing traditional machine learning models with graph data derived from algorithms like PageRank [7]. We will use the graph algorithms used in the section above to develop features for traditional machine learning algorithms such as XGBoost [2] to predict the selling price of NFTs in the network.
 
-### [Notebook 3 - Graph Neural Networks](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/gnn_training.ipynb)
+### [Notebook 3 - Graph Neural Networks](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/3-gnn_training.ipynb)
 Graph Neural Network models have been exploding in popularity in recent years, yet there have not been great ways to store and query the data into subgraphs for training models such as GraphSAGE [5]. TigerGraph simplifies this process through our Machine Learning Workbench. Researchers and data scientists can now test new architectures on arbitrarily large datasets, using tools that they are already familiar with such as PyTorch Geometric and DGL. In this section, we will train and evaluate a Graph Neural Network with the NFT data stored in TigerGraph, incorporating both the visual feature data that describes the NFTs as well as the network information into our predictions.
+
+## Next Steps
+### Save Your Work
+Make sure to download your notebooks if you made any changes to them. The GitHub repository is always available to download the stock notebooks, found [here](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial). If you wish to load the data into your own TigerGraph instance, you can download the full data file [here](https://osf.io/vejrt?view_only=319a53cf1bf542bbbe538aba37916537). Then, use the notebook [initial_modelling.ipynb](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/initial_modelling.ipynb) to process the data and downsample it if desired. By default, the [data loading notebook](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/0-load_data.ipynb) uses the sampled data file.
+
+### Join the TigerGraph Community
+There are many ways to get involved with TigerGraph. You can join the [TigerGraph Community Forum](dev.tigergraph.com/forum) to ask questions, share ideas, and more. We also have a community [Discord Channel](https://discord.gg/bVNbRtv9nK) to chat with other TigerGraph users.
+
+### KDD Tutorial Participant Office Hours
+Two "Office Hour" sessions will be held after the tutorial. The first session will be held on August 22nd, 2022 at 10:00 AM Central Time. The second session will be held on August 24th, 2022 at 5:00 PM Central Time.
+
+* [August 22nd Office Hour](https://calendar.google.com/event?action=TEMPLATE&tmeid=NTluZnVnMmw4cXFhbGEzY211OXYyMW1scnEgcGFya2VyLmVyaWNrc29uQHRpZ2VyZ3JhcGguY29t&tmsrc=parker.erickson%40tigergraph.com)
+
+* [August 24th Office Hour](https://calendar.google.com/event?action=TEMPLATE&tmeid=NTFiZjgwMjNnNmFnMTNjaDlmcWMzaWNjYnAgcGFya2VyLmVyaWNrc29uQHRpZ2VyZ3JhcGguY29t&tmsrc=parker.erickson%40tigergraph.com)
+
+
+### Tell Us What You Think
+We will send out a survey to gather feedback from participants. Please fill out the survey and share your thoughts on the tutorial.
 
 ## Authors
 
