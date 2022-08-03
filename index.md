@@ -51,7 +51,7 @@ Finally, we can paste the secret into the notebook cell below:
 <img src="./img/pasteSecret.png" alt="drawing" width="800"/>
 
 ### Using ML Workbench
-
+We will use the ML Workbench to perform data analysis and machine learning on the graph data. To do this, we will provision a notebook server with **4 CPU cores and 16 GB of RAM**.
 
 ## Hands-On Notebooks
 ### [Notebook 0 - Intro to TigerGraph Cloud and Loading Data](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/0-load_data.ipynb)
