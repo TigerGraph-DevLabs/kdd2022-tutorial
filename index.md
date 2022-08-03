@@ -7,6 +7,49 @@ Fill out the [Google Form](https://forms.gle/ncvLTykeFqJWZEU49) to get an invite
 
 ### Provisioning a Database Instance
 
+#### 1. Provision a TigerGraph Cloud Instance
+
+First, we will have to provision a TigerGraph Cloud instance. Please follow the directions given at the tutorial to provision your instance. Once that is complete, you should see something like this:
+
+
+<img src="./img/mySolutionsPage.png" alt="drawing" width="800"/>
+
+#### 2. Connect to GraphStudio
+
+Once your solution is provisioned, we want to connect to the GraphStudio UI. To do this, click on the **Applications** icon and select GraphStudio.
+
+<img src="./img/mySolutionsGS.png" alt="drawing" width="800"/>
+
+
+#### 3. Create Graph
+
+This will take you to the GraphStudio landing page, where we can create our graph. Click on the **Global View** button and select **Create a graph**:
+
+<img src="./img/createGraphGS.png" alt="drawing" width="800"/>
+
+Clicking this will bring up the following pop-up. Fill in the graph name as `KDD_2022_NFT`, and then select **Create**:
+
+<img src="./img/createGraph.png" alt="drawing" width="800"/>
+
+After this, you should see the following:
+
+<img src="./img/designSchema.png" alt="drawing" width="800"/>
+
+#### 4. Create Secret for Graph
+
+Once your graph is created, we can create a secret we will use for authentication with the database. From the previous screen, click on **Admin Portal** in the upper right corner. It will bring you to this screen:
+
+<img src="./img/apUsers.png" alt="drawing" width="800"/>
+
+Under the **Management** tab on the left hand menu bar, select **Users**. Here, you can create a secret. Define an alias and then click the **+** button:
+<img src="./img/createSecret.png" alt="drawing" width="800"/>
+
+Make sure to copy the secret that is generated, as you will never see it again.
+<img src="./img/copySecret.png" alt="drawing" width="800"/>
+
+Finally, we can paste the secret into the notebook cell below:
+<img src="./img/pasteSecret.png" alt="drawing" width="800"/>
+
 ### Using ML Workbench
 
 
