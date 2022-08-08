@@ -7,12 +7,34 @@ Fill out the [Google Form](https://forms.gle/ncvLTykeFqJWZEU49) to get an invite
 
 ### Provisioning a Database Instance
 
-#### 1. Provision a TigerGraph Cloud Instance
+First, we will have to provision a TigerGraph Cloud instance. Once you follow the invite link in the email you recieve from the Google Form, you will see a page like the below:
 
-First, we will have to provision a TigerGraph Cloud instance. Please follow the directions given at the tutorial to provision your instance. Once that is complete, you should see something like this:
+<img src="./img/tgCreateSolution.png" alt="drawing" width="800"/>
 
+Click **Create Solution** in the upper right hand corner. You will then see:
+
+<img src="./img/blankInstance.png" alt="drawing" width="800"/>
+
+Select **Blank v3.6.1** and scroll to the bottom of the page to continue. This will then bring you to the instance configuration page.
+
+<img src="./img/instanceConfig1.png" alt="drawing" width="800"/>
+
+Select **AWS** as the platform, **N. Virginia** as the region, a **Public** endpoint, and the **TG.C8.M32** Instance Type. Leave the defaults below, scroll to the bottom of the page, and click **Next**
+
+<img src="./img/instanceConfig2.png" alt="drawing" width="800"/>
+
+We will then name and tag the solution we are provisioning. **The names, tags, and subdomains must be unique, so choose something that is identifiable to you**.
+
+<img src="./img/instanceName.png" alt="drawing" width="800"/>
+
+After clicking next, you should see a confirmation page where you can check the details and then hit **Submit**.
+
+<img src="./img/instanceConfirm.png" alt="drawing" width="800"/>
+
+This will then take you back to the solutions page, where you can find your solution after a few minutes:
 
 <img src="./img/mySolutionsPage.png" alt="drawing" width="800"/>
+
 
 #### 2. Connect to GraphStudio
 
