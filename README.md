@@ -74,6 +74,39 @@ Finally, we can paste the secret into the notebook cell below:
 
 ### Using ML Workbench
 We will use the ML Workbench to perform data analysis and machine learning on the graph data. To do this, we will provision a notebook server with **4 CPU cores and 16 GB of RAM**.
+To start, view the **Solutions** page on TigerGraph Cloud:
+
+<img src="./img/tgCloudSolutions.png" alt="drawing" width="800"/>
+
+In the upper left hand corner, click on the **Tools** tab. This will bring you to the following screen:
+
+<img src="./img/mlwbTools.png" alt="drawing" width="800"/>
+
+From there, click on the **ML Workbench** button:
+
+<img src="./img/mlwbHomepage.png" alt="drawing" width="800"/>
+
+Once you are on the MLWB homepage, click on **Notebooks** in the left hand menu bar:
+
+<img src="./img/mlwbNewNB.png" alt="drawing" width="800"/>
+
+Click on the **New Notebook** button:
+
+<img src="./img/mlwbNBCreation.png" alt="drawing" width="800"/>
+
+Name your notebook, select the **tigergraphml/kf-pytorch:kdd2022** image, and use 4 CPU cores and 16 GB of RAM. Scroll to the bottom of the page and click **Launch**:
+
+<img src="./img/mlwbLaunchNB.png" alt="drawing" width="800"/>
+
+This will take you back to the MLWB notebooks homepage. Click on **Connect** to connect to the notebook server:
+
+<img src="./img/mlwbNBConnect.png" alt="drawing" width="800"/>
+
+This will take you to the notebook homepage, seen here:
+
+<img src="./img/mlwbNBHome.png" alt="drawing" width="800"/>
+
+The code for this tutorial will be in the `kdd2022-tutorial` directory.
 
 ## Hands-On Notebooks
 ### [Notebook 0 - Intro to TigerGraph Cloud and Loading Data](https://github.com/TigerGraph-DevLabs/kdd2022-tutorial/blob/main/notebooks/0-load_data.ipynb)
