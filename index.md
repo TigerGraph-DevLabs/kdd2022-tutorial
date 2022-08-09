@@ -3,7 +3,9 @@ Machine learning on graph data has become a common area of interest across acade
 
 ## Tutorial Contents
 1) [Getting Started](getting_started)
+
 2) [Graph Data Science Notebooks](notebooks)
+
 3) [Next Steps](next_steps)
 
 ## Authors
