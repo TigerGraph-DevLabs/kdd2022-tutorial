@@ -54,21 +54,6 @@ After this, you should see the following:
 
 <img src="./img/designSchema.png" alt="drawing" width="800"/>
 
-#### 4. Create Secret for Graph
-
-Once your graph is created, we can create a secret we will use for authentication with the database. From the previous screen, click on **Admin Portal** in the upper right corner. It will bring you to this screen:
-
-<img src="./img/apUsers.png" alt="drawing" width="800"/>
-
-Under the **Management** tab on the left hand menu bar, select **Users**. Here, you can create a secret. Define an alias and then click the **+** button:
-<img src="./img/createSecret.png" alt="drawing" width="800"/>
-
-Make sure to copy the secret that is generated, as you will never see it again.
-<img src="./img/copySecret.png" alt="drawing" width="800"/>
-
-Finally, we can paste the secret into the notebook cell below:
-<img src="./img/pasteSecret.png" alt="drawing" width="800"/>
-
 ### Using ML Workbench
 We will use the ML Workbench to perform data analysis and machine learning on the graph data. To do this, we will provision a notebook server with **4 CPU cores and 16 GB of RAM**.
 To start, view the **Solutions** page on TigerGraph Cloud:
@@ -103,4 +88,22 @@ This will take you to the notebook homepage, seen here:
 
 <img src="./img/mlwbNBHome.png" alt="drawing" width="800"/>
 
-The code for this tutorial will be in the `kdd2022-tutorial` directory.
+The code for this tutorial will be in the `kdd2022-tutorial` directory. On the left hand side, click on the **Files** tab, then select the `kdd2022-tutorial` directory, and within that select `notebooks`. Click on `0-load_data.ipynb` to open the first notebook. You should see something like this:
+
+<img src="./img/mlwbNB0.png" alt="drawing" width="800"/>
+
+In order to connect to your TigerGraph database, we will be using the connection tool on the left hand tab of Jupyter. Click the TigerGraph logo to see a screen similar to this:
+
+<img src="./img/solutionConnectionTab.png" alt="drawing" width="800"/>
+
+**Note:** If you do not see any solutions, refresh the notebook page and try again.
+
+Select your solution and click **Connect**:
+
+<img src="./img/solutionConnection.png" alt="drawing" width="800"/>
+
+Copy the code from the pop-up and paste it into the first code cell. This will create the connection to the TigerGraph database.
+
+<img src="./img/pastedSolutionDetails.png" alt="drawing" width="800"/>
+
+You will follow the same connection process for the other notebooks.
