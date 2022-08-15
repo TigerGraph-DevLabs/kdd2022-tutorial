@@ -3,8 +3,6 @@ Machine learning on graph data has become a common area of interest across acade
 
 ## Getting Started
 
-Fill out the [Google Form](https://forms.gle/ncvLTykeFqJWZEU49) to get an invite to a TigerGraph Cloud account. You will be able to provision a database instance and ML Workbench once you follow the invite emailed to you and create an account.
-
 ### Provisioning a Database Instance
 
 First, we will have to provision a TigerGraph Cloud instance. Once you follow the invite link in the email you recieve from the Google Form, you will see a page like the below:
